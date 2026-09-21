@@ -1,0 +1,9 @@
+services:
+  merge-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # 请求体大小上限(字节),默认 5242880 (5 MiB)
+      MAX_REQUEST_BYTES: "5242880"
+    restart: unless-stopped
